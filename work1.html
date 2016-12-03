@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<link rel="stylesheet" href="/app/prd/styles/app.css">
+</head>
+<body>
+	<div ng-controller="work1">
+		<div class="box">
+			<form>
+				<input type="text" class="search1" placeholder="search firstName" ng-model="con1"><input type="text" class="search2" placeholder="search lastName" ng-model="con2"><input type="checkbox">  Exact Match
+			</form>
+		<table>	
+		<tr>
+			<th ng-click="toggle('FirstName')">FirstName <span>▼</span><b>▲</b></th>
+			<th ng-click="toggle('LastName')">LastName  <span>▼</span><b >▲</b></th>
+			<th ng-click="toggle('Gender')">Gender    <span>▼</span><b >▲</b></th>
+			<th ng-click="toggle('Salary')">Salary    <span>▼</span><b >▲</b></th>
+			<th ng-click="toggle('Salary')">Salary    <span>▼</span><b>▲</b></th>
+			<th ng-click="toggle('Birthday')">Birthday  <span class="last">▼</span><b>▲</b></th>
+		</tr>
+				<tr ng-repeat="item in infor  | filter:search:val | filter:search2:vals | orderBy:value" >
+					<td>{{item.FirstName}}</td>
+					<td>{{item.LastName}}</td>
+					<td>{{item.Gender}}</td>
+					<td>{{item.Salary}}</td>
+					<td>{{item.Salary}}</td>
+					<td>{{item.Birthday}}</td>
+				</tr>
+		</table>
+		</div>
+	</div>
+</body>
+</html>
+<script src="/app/libs/angular.min.js"></script>
+<script src="/app/libs/jquery-1.11.1.min.js"></script>
+<script src="/app/prd/scripts/app.js"></script>

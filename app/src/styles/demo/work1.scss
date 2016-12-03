@@ -1,0 +1,28 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.box{
+	width: 60%;
+	height:60%;
+	margin-top: 20px auto;
+}
+form{
+	
+	margin-bottom: 20px;
+	.search2,.search1{
+		width: 40%;
+		margin-left: 10px;
+	}
+	input{
+		margin-left: 10px;
+	}
+	
+}
+
+table{
+	th,td{
+		border: 1px solid #ccc;
+	}
+}

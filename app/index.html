@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<link rel="stylesheet" href="/app/prd/styles/app.css">
+</head>
+<body>	
+	<!-- demo1 -->
+	<!-- <div ng-controller="demo1">
+		<p>{{user[0].name}} -- {{user[0].age}}  </p>       第一种解析方式
+		第二  种解析方式
+		<p ng-bind="user[1].name"></p>
+	</div> -->
+
+	<!-- demo2 -->
+	<!-- <div ng-controller="demo1">
+		<ul>
+			 item数组里的每一项
+			<li ng-repeat="item in user">
+				<span>姓名{{$index+1}}:{{item.name}}</span>
+				<span>年龄{{$index+1}}:{{item.age}}</span>
+			</li> 
+		</ul>
+	</div> -->
+
+	<!-- demo3 -->
+
+	<!-- <div ng-controller="demo1">
+		<p ng-show="isshow">是否显示</p>
+		<p ng-hide="isshow">是否隐藏</p>
+		<p ng-if="isshow">通过dom来确定是否显示和隐藏</p>
+	</div> -->
+
+
+	<!-- demo4 文本框里默认的值方法一 -->
+		<!-- <form action="">
+			<input type="text" placeholder="请输入内容" ng-model="name">
+		</form>
+		<div>{{name}}</div> -->
+
+	<!-- demo5文本框里默认的值方法二 -->
+
+	<!-- <form ng-controller="demo1">
+		<input type="text" ng-model="name">   //ng-model定义input的值
+		<div>{{name}}</div>
+	</form>
+	 -->
+
+	<!-- demo6定时器-->
+	<!-- <form ng-controller="demo1">
+		<input type="text" ng-model="counter"><input type="button" ng-click=add() value="+">
+	</form>  -->
+
+	<!-- demo7-->
+	<!-- <form ng-controller="demo1">
+		<label>您最感兴趣的是：</label><input type="text" ng-model="love" ng-keyup="tet($event)">
+		<ul><li ng-repeat="love in arr track by $index">{{love}}</li></ul>
+		track by $index排序
+	</form> -->
+
+		
+	 <!-- 加class的方法一（只适合加一种类）
+	 <div ng-controller="demo1">
+	        <p>{{price | currency:"￥"}}</p>
+	        <ul>
+	           <li ng-repeat="book in books | limitTo:limit | orderBy:'-updated'" ng-class="{'bg1':book.publite}">
+	              <p>书名：{{book.name | uppercase}}</p>
+	              <p>更新时间：{{book.updated | date:"yyyy年MM月dd日 HH:mm"}}</p>
+	           </li>
+	        </ul>
+	    </div>  -->
+
+		 <!-- 加class的方法二（适合加多种类）-->
+	   <!-- <div ng-controller="demo1">
+	         <p>{{price | currency:"￥"}}</p>
+	         <ul>
+	            <li ng-repeat="book in books | limitTo:limit | orderBy:'-updated'" ng-class="{true:'bg2',false:'bg3'}[book.publite]">
+	               <p>书名：{{book.name | uppercase}}</p>
+	               <p>更新时间：{{book.updated | date:"yyyy年MM月dd日 HH:mm"}}</p>
+	            </li>
+	         </ul>
+	     </div>  --> 
+
+
+   <!-- demo8-->
+   <!-- <div ng-controller="demo1">
+   		<p>{{price | currency:"￥"}}</p>
+   		<ul>
+   			<li ng-repeat="ani in animals | limitTo:2 | orderBy:'-time'">
+   				<span>{{ani.name}}</span>
+   				<span>{{ani.type | uppercase}}</span>
+   				<span>{{ani.time | date:"yyyy年MM月dd日 HH:mm:ss"}}</span>
+   			</li>
+   		</ul>
+   </div> -->
+
+
+    <!-- demo9搜索表格里的值(方法一)-->
+    <!-- <div class="big" ng-controller="demo1">
+    
+    	 <input type="text" class="search" ng-model="con" >
+      
+       
+    	    <div class="box">
+    	    	<table>
+    		    	<tr>
+    		    		<th>姓名</th>
+    		    		<th>年龄</th>
+    		    		<th>电话</th>
+    		    	</tr>
+    		    	<tr ng-repeat="val in tables | filter:con:true">
+    		    		<td>{{val.name}}</td>
+    		    		<td>{{val.age}}</td>
+    		    		<td>{{val.tel}}</td>
+    		    	</tr>
+    	    	</table>
+    	</div>
+    
+    	</div> -->
+
+
+
+    	<!-- demo9搜索表格里的值(方法二)-->
+   <div class="big" ng-controller="demo1">
+    
+    	 <input type="text" class="search" ng-model="con" >
+    	    <div class="box">
+    	    	<table>
+    		    	<tr>
+    		    		<th>姓名</th>
+    		    		<th>年龄</th>
+    		    		<th>电话</th>
+    		    	</tr>
+    		    	 <tr ng-repeat="val in tables | filter:search:vals:true">
+    		    		<!--代表对象里的每一个值 -->
+    		    		<td>{{val.name}}</td>
+    		    		<td>{{val.age}}</td>
+    		    		<td>{{val.tel}}</td>
+    		    	</tr>
+    	    	</table>
+    	</div>
+    
+    	</div>
+   
+	
+</body>
+</html>
+<script src="/app/libs/angular.min.js"></script>
+<script src="/app/prd/scripts/app.js"></script>

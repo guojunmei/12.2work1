@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<link rel="stylesheet" href="/app/prd/styles/app.css">
+</head>
+<body>
+	<div ng-controller="myCtrl">
+			<p>
+				<input type="text" ng-model='search' />
+				{{user}}
+			</p>
+			<table border="1" cellspacing="" cellpadding="">
+				<thead>
+					<tr id='con'>
+						<td ng-click="order('firstName')">firstName</td>
+						<td ng-click="order('lastName')">lastName</td>
+						<td ng-click="order('birthday')">birthday</td>
+						<td ng-click="order('age')">age</td>
+						<td ng-click="order('email')">email</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat='news in tmp | filter:search'>
+						<td>{{news.firstName}}</td>
+						<td>{{news.lastName}}</td>
+						<td>{{news.birthday}}</td>
+						<td>{{news.age}}</td>
+						<td>{{news.email}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</body>
+</html>
+<script src="/app/libs/angular.min.js"></script>
+<script src="/app/libs/jquery-1.11.1.min.js"></script>
+<script src="/app/prd/scripts/app.js"></script>
